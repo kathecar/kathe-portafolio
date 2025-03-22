@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Fondo y estructura */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(59, 226, 218, 0.6)), url(../Portafolio/technology-hologram-illustrated.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    padding: 50px 2%;
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    width: 100%;
+    padding: 40px;
+    height: 100%;
+}
+
+/* Información de contacto */
+.box-info {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    margin-top: -80px;
+}
+
+.box-info h1 {
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.data p {
+    font-size: 20px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+}
+
+.data p i {
+    color: #8330D2;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Redes sociales */
+.links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.links a {
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    background: #8330D2;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.links a i {
+    color: #fff;
+    font-size: 22px;
+}
+
+.links a:hover {
+    background: #bf78fb;
+    transform: scale(1.1);
+}
+
+/* Estilos del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Inputs */
+.input-box {
+    position: relative;
+}
+
+.input-box input,
+.input-box textarea {
+    font-size: 20px;
+    font-weight: 200px;
+    width: 100%;
+    height: 50px;
+    padding: 12px;
+    outline: none;
+    background: #ffffff33;
+    border: 2px solid transparent;
+    color: #fff;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.input-box textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* Placeholder */
+.input-box input::placeholder,
+.input-box textarea::placeholder {
+    color: #d1c8e1;
+    font-size: 20px;
+    font-weight: 400px;
+}
+
+/* Animación al hacer foco */
+.input-box input:focus,
+.input-box textarea:focus {
+    border-color: #8330D2;
+    background: #ffffff4d;
+}
+
+/* Iconos en los inputs */
+.input-box i {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #ffffff80;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.input-box input:focus ~ i {
+    color: #8330D2;
+}
+
+/* Botón */
+form button {
+    width: 100%;
+    padding: 12px;
+    background: #8330D2;
+    color: #fff;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+form button:hover {
+    background: #BF78FB;
+    transform: scale(1.05);
+}
+
+/* Animación de sacudida */
+@keyframes shake { 
+    0%, 100% { transform: translateX(0); } 
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); } 
+    20%, 40%, 60%, 80% { transform: translateX(5px); } 
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+    .contact {
+        grid-template-columns: 1fr; /* Una sola columna */
+        text-align: center;
+        padding: 30px;
+    }
+
+    .box-info {
+        align-items: center;
+    }
+
+    .box-info h1 {
+        font-size: 35px;
+    }
+
+    .data p {
+        font-size: 16px;
+    }
+
+    .links {
+        justify-content: center;
+    }
+
+    form {
+        width: 100%;
+    }
+}

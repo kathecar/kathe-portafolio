@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    height: 100vh;
+    background: url("../Portafolio/Background.jpg") no-repeat center / cover;
+    padding: 50px 2%;
+}
+.portafolio .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+.portafolio h2{
+    font-size: 55px;
+    text-align: center;
+    padding: 20px 0;
+    color: #fff;
+}
+.portafolio .Blog-Website{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: space-around;
+
+}
+.portafolio .Blog-Website .proyecto{
+    position: relative;
+    color: #000000;
+    max-width: 340px;
+    height: fit-content;
+    margin: 10px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    overflow: hidden;
+}
+.portafolio .Blog-Website .proyecto img{
+    width: 100%;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+}
+.portafolio .Blog-Website .proyecto .overlay{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: linear-gradient(rgba(59,226,218,0.6), rgba(59,226,218,0.6));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 1s;
+    font-size: 18px;
+    letter-spacing: 3px;
+    opacity: 0;
+}
+.portafolio .Blog-Website .proyecto .overlay h3{
+    margin-bottom: 20px;
+    transition: 1s;
+}
+.portafolio .Blog-Website .proyecto .overlay:hover{
+    opacity: 1;
+}
+.portafolio .Blog-Website .proyecto .overlay:hover h3{
+    margin-bottom: 0px;
+}

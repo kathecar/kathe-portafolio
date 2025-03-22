@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Contactame</title>
+    <link rel="stylesheet" href="../CSS/contactame.css">
+    <link rel="stylesheet" href="../CSS/navegacion.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="#" class="logo">
+                <img src="../Portafolio/Logo.png" alt="Logo">
+            </a>
+
+            <nav class="navbar">
+                <a href="../index.html" >Inicio</a>
+                <a href="../html/sobreMi.html" >Sobre mí</a>
+                <a href="../html/proyectos.html">Portafolio</a>
+                <a href="#">Servicios</a>
+                <a href="../html/contactame.html" class="active">Contacto</a>
+            </nav>
+        </header>
+        
+        <section class="contact">
+            <!-- Información de contacto -->
+             
+            <div class="box-info">
+                <h1>Contáctame</h1>
+                <div class="data">
+                    <p><i class="fa-solid fa-phone"></i> +57 310-782-8747</p>
+                    <p><i class="fa-solid fa-envelope"></i> katherinnecardenas16@gmail.com</p>
+                </div>
+                <div class="links">
+                    <a href="https://github.com/kathecar"><i class="ri-github-fill"></i></a>
+                    <a href="https://www.linkedin.com/in/katherinne-dayanna-cardenas-clavijo-15974b231/"><i class="ri-linkedin-fill"></i></a>
+                    <a href="https://wa.me/573107828747"><i class="ri-whatsapp-line"></i></a>
+                </div>
+            </div>
+            <!-- Formulario de contacto -->
+             <form action="https://formspree.io/f/xpwqbreo" method="POST">
+                <div class="input-box">
+                    <input type="text" name="name" placeholder="Nombre y apellido" required>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" name="email" required placeholder="Correo electrónico">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="subject" placeholder="Asunto">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </div>
+                <div class="input-box">
+                    <textarea name="message" placeholder="Escribe tu mensaje..." required></textarea>
+                </div>
+                <button type="submit">Enviar mensaje</button>
+            </form>
+        </section>
+    </div>
+</body>
+<script src="../JavaScript/contactame.js"></script>
+</html>
