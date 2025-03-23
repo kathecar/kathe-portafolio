@@ -62,6 +62,120 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+//SECCION HABILIDADES
+
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.querySelector('.skills .toggle-text');
+    const hiddenText = document.querySelector('.skills .hidden-text');
+    
+    // Set initial state
+    hiddenText.style.display = 'none';
+    
+    toggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        if (hiddenText.style.display === 'none') {
+            hiddenText.style.display = 'inline';
+            toggleBtn.textContent = 'Ver menos';
+        } else {
+            hiddenText.style.display = 'none';
+            toggleBtn.textContent = 'Ver más';
+        }
+    });
+});
+
+// JavaScript para controlar el carrusel
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar todos los carruseles
+    const carousels = document.querySelectorAll('.carousel');
+    
+    carousels.forEach(carousel => {
+        const items = carousel.querySelectorAll('.carousel-item');
+        const dots = carousel.querySelectorAll('.dot');
+        const prevBtn = carousel.querySelector('.prev-btn');
+        const nextBtn = carousel.querySelector('.next-btn');
+        let currentIndex = 0;
+        
+        // Función para mostrar una imagen específica
+        function showSlide(index) {
+            // Asegurarse de que el índice esté dentro del rango
+            if (index < 0) {
+                currentIndex = items.length - 1;
+            } else if (index >= items.length) {
+                currentIndex = 0;
+            } else {
+                currentIndex = index;
+            }
+            
+            // Ocultar todas las imágenes y desactivar todos los puntos
+            items.forEach(item => item.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Mostrar la imagen actual y activar el punto correspondiente
+            items[currentIndex].classList.add('active');
+            dots[currentIndex].classList.add('active');
+        }
+        
+        // Event listeners para los botones anterior y siguiente
+        prevBtn.addEventListener('click', () => {
+            showSlide(currentIndex - 1);
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            showSlide(currentIndex + 1);
+        });
+        
+        // Event listeners para los puntos
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const index = parseInt(dot.getAttribute('data-index'));
+                showSlide(index);
+            });
+        });
+        
+        // Iniciar carrusel automático
+        let interval = setInterval(() => {
+            showSlide(currentIndex + 1);
+        }, 4000);
+        
+        // Detener el carrusel automático al pasar el mouse sobre él
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(interval);
+        });
+        
+        // Reanudar el carrusel automático al quitar el mouse
+        carousel.addEventListener('mouseleave', () => {
+            interval = setInterval(() => {
+                showSlide(currentIndex + 1);
+            }, 4000);
+        });
+        
+        // También podemos permitir que el usuario deslice en dispositivos móviles
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        carousel.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        carousel.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                // Deslizar a la izquierda
+                showSlide(currentIndex + 1);
+            } else if (touchEndX > touchStartX + 50) {
+                // Deslizar a la derecha
+                showSlide(currentIndex - 1);
+            }
+        }
+    });
+});
+
 //SECCION CONTACTAME
 
 document.getElementById("contact-form").addEventListener("submit", async function(event) {
