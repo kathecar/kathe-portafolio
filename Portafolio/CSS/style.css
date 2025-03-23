@@ -51,17 +51,13 @@ nav {
 }
 .hamburg, .cancel {
     cursor: pointer;
-    position: fixed; /* Cambiado de 'absolute' a 'fixed' */
+    position: absolute;
     right: 15px;
     top: 10px;
     color: white;
-    display: block !important; /* Forzar visualización */
+    display: none;
     font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
-    background-color: black;
-    z-index: 2000; /* Aumentado de 1000 a 2000 */
-    padding: 5px;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    z-index: 1001;
 }
 .nav-container .links{
     display: flex;
