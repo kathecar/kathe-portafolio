@@ -1,13 +1,14 @@
-function hamburg(){
-    const navbar = document.querySelector(".dropdown")
-    navbar.style.transform = "translateY(0px)"
+function hamburg() {
+    const navbar = document.querySelector(".dropdown");
+    navbar.style.transform = "translateY(0px)";
+    navbar.style.backgroundColor = "rgba(0, 0, 0, 0.8)"; // Add a semi-transparent black background
 }
 
-function cancel(){
-    const navbar = document.querySelector(".dropdown")
-    navbar.style.transform = "translateY(-500px)"
+function cancel() {
+    const navbar = document.querySelector(".dropdown");
+    navbar.style.transform = "translateY(-500px)";
+    // No need to change background color here as it will be hidden
 }
-
 // Typewriter Effect
 const texts = [
     "Desarrolladora Full Stack",
