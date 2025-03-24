@@ -7,8 +7,7 @@ function hamburg() {
 function cancel() {
     const navbar = document.querySelector(".dropdown");
     navbar.style.transform = "translateY(-500px)";
-    // No need to change background color here as it will be hidden
-}
+    }
 // Typewriter Effect
 const texts = [
     "Desarrolladora Full Stack",

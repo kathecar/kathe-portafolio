@@ -217,9 +217,10 @@ section{
 @media (max-width:884px) {
     nav .logo{
         position: absolute;
-        top: 16px;
+        top: 10px;
         left: 15px;
         font-size: 1.5rem;
+        align-items: center;
     }
     .main-container {
         display: flex;
@@ -245,6 +246,7 @@ section{
         width: 50%;
         height: 60%;
     }
+    
 }
 @media (max-width:440px){
     .main-container .image{
@@ -252,6 +254,7 @@ section{
         height: 60%;
         margin-bottom: 0px;
     }
+    
     .main-container .content{
         width: 80%;
     }
@@ -436,20 +439,48 @@ section{
 
 /* Responsive para About section */
 @media (max-width: 884px) {
-    .about-content {
-        flex-direction: column-reverse; /* En móvil, la imagen aparece arriba */
+    .about-container {
+        width: 90%; /* Slightly reduce container width on smaller screens */
+        padding: 15px; /* Reduce padding */
     }
-    
-    .about-column {
-        width: 100%;
+
+    .main-container {
+        flex-direction: column-reverse; /* Stack content vertically with image below text */
+        align-items: center; /* Center items horizontally */
+        gap: 20px; /* Add some space between image and text */
     }
-    
-    .img-card {
-        margin: 0 auto;
+
+    .main-container .content {
+        width: 100%; /* Full width for content */
+        text-align: center; /* Center text */
+        margin-bottom: 20px; /* Add space above image */
     }
-    
-    .about-column.image-column {
-        justify-content: center; /* Centra la imagen en vista móvil */
+
+    .main-container .image {
+        width: 60%; /* Reduce image size */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 400px; /* Maximum width */
+        margin-bottom: 30px; /* Add space below image */
+    }
+
+    .content-title {
+        text-align: center; /* Center title */
+    }
+
+    .botonVer {
+        display: inline-block; /* Ensure button is centered */
+        margin: 0 auto; /* Center the button */
+    }
+}
+
+@media (max-width: 440px) {
+    .main-container .image {
+        width: 80%; /* Even smaller on very small screens */
+        max-width: 300px; /* Reduce maximum width */
+    }
+
+    .main-container .content {
+        padding: 0 15px; /* Add some horizontal padding */
     }
 }
 
@@ -1033,6 +1064,9 @@ section{
     .contact .box-info,
     .contact form {
         width: 90%;
+        flex-direction: column;
+        align-items: center;
+        padding: 10vh 15px;
     }
     
     .services .content .card,
